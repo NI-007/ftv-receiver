@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- 仕様書: docs/IP/20261108-1959_W-LIST・設定・HOMEのエクスポートとインポート.md 2-7（受け取り用のページ。モックの 8）
+     Fire TV の「QR ⬇」の QR をスマホのカメラで撮ると開く。データは URL の # の後ろにあり、このページのサーバーには送られない。
+     外のものは読み込まない（CSP）。公開の手順は README.md -->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>Fire TV の W-LIST を受け取る</title>
+<link rel="stylesheet" href="receiver.css">
+</head>
+<body>
+<main class="receiver">
+  <h1 id="receiver-title" class="receiver-title">Fire TV の W-LIST を受け取る</h1>
+  <div id="receiver-progress" class="receiver-progress" role="img"></div>
+  <p id="receiver-status" class="receiver-status" role="status" aria-live="polite"></p>
+  <button id="receiver-save" class="receiver-save" type="button" hidden aria-label="ファイルを保存">⬇ 保存</button>
+  <p class="receiver-note">読んだ QR はこのブラウザーの中だけに貯め、24 時間たつと消えます。どこにも送りません。</p>
+</main>
+<script src="transfer_codec.js"></script>
+<script src="receiver.js"></script>
+</body>
+</html>

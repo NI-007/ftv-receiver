@@ -1,0 +1,101 @@
+/* 仕様書: docs/IP/20261108-1959_W-LIST・設定・HOMEのエクスポートとインポート.md 2-7（受け取り用のページ。モックの 8）
+   スマホの幅で読む。見る機器の明暗に合わせる */
+:root {
+  --bg: #f4f5f7;
+  --fg: #1b1d22;
+  --muted: #5b606b;
+  --panel: #ffffff;
+  --dot: #c9cdd4;
+  --done: #2e9d4f;
+  --button-bg: #1b1d22;
+  --button-fg: #ffffff;
+  --focus: #2f6fd6;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111111;
+    --fg: #ffffff;
+    --muted: #bdbdbd;
+    --panel: #1f1f1f;
+    --dot: #474747;
+    --done: #4caf50;
+    --button-bg: #f1f1f1;
+    --button-fg: #111111;
+    --focus: #7aa7f0;
+    color-scheme: dark;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.receiver {
+  display: grid;
+  gap: 16px;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 24px max(16px, env(safe-area-inset-right, 0px)) 40px max(16px, env(safe-area-inset-left, 0px));
+}
+
+.receiver-title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.receiver-progress {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.receiver-progress i {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--dot);
+}
+
+.receiver-progress i.is-done {
+  background: var(--done);
+}
+
+.receiver-status {
+  margin: 0;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--panel);
+  overflow-wrap: anywhere;
+}
+
+.receiver-status:empty {
+  display: none;
+}
+
+.receiver-save {
+  padding: 14px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--button-bg);
+  color: var(--button-fg);
+  font-size: 18px;
+}
+
+.receiver-save:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.receiver-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
